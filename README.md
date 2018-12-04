@@ -13,7 +13,7 @@ The code was tested on Python 2.7 and should also work on later versions.
 You will need **psycopg2** module to run the code. To install, please refer to
 psycopg2's website at http://initd.org/psycopg/docs/install.html#binary-install-from-pypi
 
-##Running the code
+## Running the code
 Run file 'log_analysis.py'. It will take some time to retrieve the results, so be patient!
 File 'sample_output.txt' contains the expected results after program completion.
 

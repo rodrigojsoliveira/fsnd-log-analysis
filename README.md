@@ -7,6 +7,8 @@ the reporting tool will answer the folowing three questions:
 1. Who are the most popular article authors of all time?
 1. On which days did more than 1% of requests lead to errors?
 
+This project is part os Udacity´s Full Stack Web Developer Nanodegree. Files `fsnd-virtual-machine.zip` and `newsdata.zip` were created by the Udacity team specifically for this Nanodegree.
+
 ## Virtual Machine Setup
 In order to run the code, you will need to install some software. They are:
 

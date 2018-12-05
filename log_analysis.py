@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """Log Analysis program.
 
    This program will fetch data from

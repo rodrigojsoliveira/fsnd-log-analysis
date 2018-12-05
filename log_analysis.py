@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-"""Log Analysis program.
+"""
+Log Analysis program.
 
-   This program will fetch data from
-   a database and answer three pre-defined questions.
-   The code was tested with Python v. 2.7 and will
-   run on version 3.0 and greater.
+This program will fetch data from
+a database and answer three pre-defined questions.
+The code was tested with Python v. 2.7 and will
+run on version 3.0 and greater.
 
-   Written by Rodrigo Jose Sarmento Oliveira - Dec/2018"""
+Written by Rodrigo Jose Sarmento Oliveira - Dec/2018
+"""
 
 import psycopg2
 
@@ -49,7 +51,7 @@ mostErrors = """select to_char(the_day, 'FMMonth DD, YYYY'), result from
 
 
 def getResults(selectQueryString):
-    """Executes a SQL SELECT query and returns the retrieved data."""
+    """Execute an SQL SELECT query and returns the retrieved data."""
     db = psycopg2.connect("dbname=news")
     cur = db.cursor()
     cur.execute(selectQueryString)

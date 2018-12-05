@@ -83,7 +83,7 @@ if __name__ == '__main__':
     articles = getResults(top3articles)
     print ("\nThe three most popular articles of all time are:\n")
     for article in articles:
-        print('  "{}" - {} views').format(article[0], article[1])
+        print('  "{}" - {} views'.format(article[0], article[1]))
     print('\n')
 
     """Answer question 2: Who are the most popular article authors of all time?
@@ -92,7 +92,7 @@ if __name__ == '__main__':
     authors = getResults(topAuthors)
     print ("The most popular article authors are:\n")
     for author in authors:
-        print('  {} - {} views').format(author[0], author[1])
+        print('  {} - {} views'.format(author[0], author[1]))
     print('\n')
 
     """Answer question 3: On which days did more than 1% of
@@ -104,5 +104,5 @@ if __name__ == '__main__':
         mm = str(errorDay[0])[5:7]
         mmString = getMonthString(int(mm))
         yy = str(errorDay[0])[:4]
-        print('  {} {}, {} - {}% errors').format(mmString, dd, yy, errorDay[1])
+        print('  {} {}, {} - {}% errors'.format(mmString, dd, yy, errorDay[1]))
     print('\n')

@@ -15,7 +15,7 @@ import psycopg2
 """Define the 3 SQL queries used on the reporting application."""
 top3articles = """select articles.title, count(log.path) as views
                   from articles join log
-                  on articles.slug = right(log.path, length(articles.slug))
+                  on '/article/' || articles.slug = log.path
                   group by articles.title
                   order by views desc
                   limit 3;"""
@@ -25,7 +25,7 @@ topAuthors = """select authors.name, sum(views_per_article.views) as total_views
                 (select max(articles.author) as author_id,
                 count(log.path) as views
                 from articles join log
-                on articles.slug = right(log.path, length(articles.slug))
+                on '/article/' || articles.slug = log.path
                 group by articles.title) as views_per_article
                 on authors.id = views_per_article.author_id
                 group by authors.name

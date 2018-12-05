@@ -63,8 +63,8 @@ if __name__ == '__main__':
        Which articles have been accessed the most?"""
     articles = getResults(top3articles)
     print ("\nThe three most popular articles of all time are:\n")
-    for article in articles:
-        print('  "{}" - {} views'.format(article[0], article[1]))
+    for title, views in articles:
+        print('  "{}" - {} views'.format(title, views))
     print('\n')
 
     """Answer question 2: Who are the most popular article authors of all time?

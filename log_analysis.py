@@ -31,7 +31,7 @@ topAuthors = """select authors.name, sum(views_per_article.views) as total_views
                 group by authors.name
                 order by total_views desc;"""
 
-mostErrors = """select the_day, result from
+mostErrors = """select to_char(the_day, 'FMMonth DD, YYYY'), result from
                 (select error_count.the_day,
                 round((cast(errors as decimal)/total)*100,2) as result
                 from
@@ -58,25 +58,6 @@ def getResults(selectQueryString):
     return results
 
 
-def getMonthString(monthNumber):
-    """Converts an integer representing a month into its string format."""
-    months = {
-        1: "January",
-        2: "February",
-        3: "March",
-        4: "April",
-        5: "May",
-        6: "June",
-        7: "July",
-        8: "August",
-        9: "September",
-        10: "October",
-        11: "November",
-        12: "December",
-    }
-    return months.get(monthNumber, "nothing")
-
-
 if __name__ == '__main__':
     """Answer question 1: What are the most popular three articles of all time?
        Which articles have been accessed the most?"""
@@ -100,9 +81,5 @@ if __name__ == '__main__':
     errorDays = getResults(mostErrors)
     print ("More than 1% of requests lead to errors on this day:\n")
     for errorDay in errorDays:
-        dd = str(errorDay[0])[8:]
-        mm = str(errorDay[0])[5:7]
-        mmString = getMonthString(int(mm))
-        yy = str(errorDay[0])[:4]
-        print('  {} {}, {} - {}% errors'.format(mmString, dd, yy, errorDay[1]))
+        print('  {} - {}% errors'.format(errorDay[0], errorDay[1]))
     print('\n')
